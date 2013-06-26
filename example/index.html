@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+		<title>WS-Zoom</title>
+    <link rel="stylesheet" type="text/css" href="wsswitch.css"/>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		
+   
+			<script type="text/javascript" src="jquery-1.10.1.min.js"></script>
+      <script type="text/javascript" src="jquery.wsswitch-1.0.js"></script>
+		
+  </head>
+  <body>
+		<div class="main">
+			<div class="content">
+				<input id="switch1" class="switch" type="checkbox" value="1" checked/>
+				<input id="switch2" class="switch" type="checkbox" value="2" checked/>
+				<input id="switch3" class="switch" type="checkbox" value="3"/>
+				<input id="switch4" class="switch" type="checkbox" value="4"/>
+				<input id="switch5" class="switch" type="checkbox" value="5" checked/>
+				<input id="switch6" class="switch" type="checkbox" value="6"/>
+				<input id="switch7" class="switch" type="checkbox" value="7"/>
+				<input id="switch8" class="switch" type="checkbox" value="8" checked/>
+				
+				<span class="output">
+					
+				</span>
+			</div>
+			<div class="info">
+				<h2>Defaults</h2>
+				<ul>
+					<li>value: 1</li>
+					<li>onChange:function({value:boolean,target:object})</li>
+				</ul>
+				<h2>Download</h2>
+				<a href="wsswitch.zip">download(zip)</a>
+			</div>
+		</div>	
+    <script type="text/javascript">
+        $(".switch").wsSwitch({onChange:check});
+				function check(data){
+					
+					$(".output").append($(data.target).attr("id")+":"+data.value+"<br/>")
+				}
+				
+    </script>
+  </body>
+</html>
